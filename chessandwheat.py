@@ -21,4 +21,3 @@ for i in list:
     total+=i
 
 print(total)
-        
