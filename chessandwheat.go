@@ -3,23 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	num := []uint64{}
-	var total uint64 = 0
-
-	fmt.Println(num)
-	for i := 1; i <= 64; i++ {
-		if i == 1 {
-			num = append(num, uint64(i))
+	total := uint64(0)
+	arr := []uint64{}
+	
+	for i := 0; i < 64; i++ {
+		if i == 0 {
+			total += 1
+			arr = append(arr, 1)
 		} else {
-			num = append(num, 2*(num[len(num)-1]))
-			// get last item
+			total += 2 * arr[len(arr)-1]
+			arr = append(arr, (2 * arr[len(arr)-1]))
 		}
 	}
-	for _, s := range num {
-		fmt.Println(s)
-	}
-	for _, s := range num {
-		total += s
-	}
-	fmt.Println("Total: ", total)
+
+	fmt.Println(total)
+	fmt.Println(arr)
 }
